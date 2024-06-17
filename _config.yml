@@ -18,6 +18,7 @@ exclude:
 # Plugins
 plugins:
   - jekyll-feed
+  - jekyll-environment-variables
 
 # Jekyll Feed settings
 feed:
