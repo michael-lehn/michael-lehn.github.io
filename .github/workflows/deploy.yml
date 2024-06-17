@@ -29,14 +29,8 @@ jobs:
           JEKYLL_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
         run: bundle exec jekyll build
 
-      - name: Debug GitHub Token
-        run: echo ${{ secrets.GITHUB_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-

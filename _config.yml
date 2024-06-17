@@ -47,7 +47,9 @@ collections:
     permalink: /en/:collection/:path/
 
 gitalk:
-  repo: 'michael-lehn.github.io`
+  clientID: ENV['JEKYLL_GITALK_CLIENT_ID']
+  clientSecret: ENV['JEKYLL_GITALK_CLIENT_SECRET']
+  repo: 'michael-lehn.github.io'
   owner: 'michael-lehn'
   admin: ['michael-lehn']
   distractionFreeMode: false
