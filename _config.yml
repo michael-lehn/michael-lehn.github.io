@@ -1,0 +1,28 @@
+title: My Blog
+description: >- # using `>-` to ignore line breaks
+  My Blog
+baseurl: ""
+url: "https://michael-lehn.github.io" # die Basis-URL der Seite
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude files and folders from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Jekyll Feed settings
+feed:
+  path: feed.xml
+
+# Permalinks settings
+permalink: /:year/:month/:day/:title/
+
