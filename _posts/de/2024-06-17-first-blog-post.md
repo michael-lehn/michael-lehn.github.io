@@ -1,5 +1,5 @@
 ---
-layout: post_de
+layout: post
 title: "Mein erster Blog-Post"
 date: 2023-06-10
 lang: de
