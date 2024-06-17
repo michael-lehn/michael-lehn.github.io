@@ -6,6 +6,11 @@ url: "https://michael-lehn.github.io" # die Basis-URL der Seite
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  use_coderay: false
+
 theme: minima
 
 # Exclude files and folders from processing
@@ -18,7 +23,14 @@ exclude:
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-environment-variables
+  - jekyll-seo-tag
+
+# Gitalk settings (will be overwritten by the plugin)
+gitalk: {}
+
+# Other configurations
+kramdown:
+  input: GFM
 
 # Jekyll Feed settings
 feed:
@@ -45,11 +57,3 @@ collections:
   en:
     output: true
     permalink: /en/:collection/:path/
-
-gitalk:
-  clientID: ENV['JEKYLL_GITALK_CLIENT_ID']
-  clientSecret: ENV['JEKYLL_GITALK_CLIENT_SECRET']
-  repo: 'michael-lehn.github.io'
-  owner: 'michael-lehn'
-  admin: ['michael-lehn']
-  distractionFreeMode: false
