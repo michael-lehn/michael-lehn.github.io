@@ -13,12 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: List available Ruby versions
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo apt-add-repository -y ppa:brightbox/ruby-ng
-          sudo apt-get update
-          ruby -v > available_ruby_versions.txt
+        run: ruby -v > available_ruby_versions.txt
 
       - name: Save Ruby versions
         uses: actions/upload-artifact@v2
