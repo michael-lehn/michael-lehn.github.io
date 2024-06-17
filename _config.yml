@@ -6,11 +6,6 @@ url: "https://michael-lehn.github.io" # die Basis-URL der Seite
 
 # Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  use_coderay: false
-
 theme: minima
 
 # Exclude files and folders from processing
@@ -21,28 +16,8 @@ exclude:
   - vendor
 
 # Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Gitalk settings (will be overwritten by the plugin)
-gitalk: {}
-
-gitalk:
-  clientID: 'Ov23liRXSZ9XoC6IoZB1'
-  clientSecret: '0c715e2b431c778a05798eea24b90857a37718c5'
-  repo: 'michael-lehn.github.io' # Dein Repository-Name
-  owner: 'michael-lehn'
-  admin: ['michael-lehn']
-  distractionFreeMode: false
-  oauthHost: 'https://github.com' # Optional, falls du einen benutzerdefinierten OAuth-Host verwendest
-  oauthPath: '/login/oauth/authorize' # Optional, falls du einen benutzerdefinierten OAuth-Pfad verwendest
-  redirectUri: 'https://michael-lehn.github.io/callback' # Stelle sicher, dass dies mit deiner OAuth-App übereinstimmt
-
-
-# Other configurations
-kramdown:
-  input: GFM
+#plugins:
+#  - jekyll-feed
 
 # Jekyll Feed settings
 feed:
@@ -69,3 +44,5 @@ collections:
   en:
     output: true
     permalink: /en/:collection/:path/
+
+
