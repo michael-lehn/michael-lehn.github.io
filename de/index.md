@@ -5,6 +5,7 @@ title: Blog auf Deutsch
 
 # Blog auf Deutsch
 
+<ul>
 {% for post in site.posts %}
   {% if post.lang == "de" %}
     <li>
@@ -12,3 +13,4 @@ title: Blog auf Deutsch
     </li>
   {% endif %}
 {% endfor %}
+</ul>
