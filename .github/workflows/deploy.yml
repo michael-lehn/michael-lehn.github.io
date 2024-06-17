@@ -1,57 +1,37 @@
 name: Deploy Jekyll site to GitHub Pages
 
 on:
-  workflow_run:
-    workflows: ["Determine Available Ruby Versions"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Download Ruby versions
-        uses: actions/download-artifact@v2
         with:
-          name: ruby-versions
-
-      - name: Set up and display available Ruby versions
-        id: setup_ruby
-        run: |
-          AVAILABLE_VERSIONS=$(cat available_ruby_versions.txt)
-          echo "Available Ruby versions:"
-          echo "$AVAILABLE_VERSIONS"
-          # Extract the first available version
-          RUBY_VERSION=$(echo "$AVAILABLE_VERSIONS" | grep -oP 'ruby-\K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
-          echo "Using Ruby version: $RUBY_VERSION"
-          echo "::set-output name=ruby_version::$RUBY_VERSION"
+          fetch-depth: 0
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ steps.setup_ruby.outputs.ruby_version }}
-
-      - name: Display Ruby version
-        run: ruby -v
+          ruby-version: '2.7'
 
       - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+        run: bundle install
 
       - name: Build Jekyll site
         env:
-          JEKYLL_GITALK_CLIENT_ID: ${{ secrets.JEKYLL_GITALK_CLIENT_ID }}
-          JEKYLL_GITALK_CLIENT_SECRET: ${{ secrets.JEKYLL_GITALK_CLIENT_SECRET }}
+          JEKYLL_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
+          JEKYLL_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-
