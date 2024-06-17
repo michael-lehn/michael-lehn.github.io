@@ -46,8 +46,7 @@ collections:
     permalink: /en/:collection/:path/
 
 gitalk:
-  clientID: 'Ov23liRXSZ9XoC6IoZB1'
-  clientSecret: 'your-client-secret'
-  repo: 'your-repo'
-  owner: 'your-github-username'
-  admin: ['your-github-username']
+  repo: 'michael-lehn.github.io`
+  owner: 'michael-lehn'
+  admin: ['michael-lehn']
+  distractionFreeMode: false
