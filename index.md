@@ -1,7 +1,5 @@
 ---
 layout: home
-title: Welcome
+title: Michael's Blog
 ---
-# Welcome to my blog
-
-This is my first blog.
+What this blog is about ...
