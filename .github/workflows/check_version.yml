@@ -1,0 +1,28 @@
+name: Determine Available Ruby Versions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  list-ruby-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List available Ruby versions
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo apt-add-repository -y ppa:brightbox/ruby-ng
+          sudo apt-get update
+          apt-cache madison ruby > available_ruby_versions.txt
+
+      - name: Save Ruby versions
+        uses: actions/upload-artifact@v2
+        with:
+          name: ruby-versions
+          path: available_ruby_versions.txt
+
