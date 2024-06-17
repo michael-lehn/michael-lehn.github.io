@@ -29,15 +29,15 @@ plugins:
 gitalk: {}
 
 gitalk:
-  clientID: ENV['JEKYLL_GITALK_CLIENT_ID']
-  clientSecret: ENV['JEKYLL_GITALK_CLIENT_SECRET']
+  clientID: 'Ov23liRXSZ9XoC6IoZB1'
+  clientSecret: '0c715e2b431c778a05798eea24b90857a37718c5'
   repo: 'michael-lehn.github.io' # Dein Repository-Name
   owner: 'michael-lehn'
   admin: ['michael-lehn']
   distractionFreeMode: false
   oauthHost: 'https://github.com' # Optional, falls du einen benutzerdefinierten OAuth-Host verwendest
   oauthPath: '/login/oauth/authorize' # Optional, falls du einen benutzerdefinierten OAuth-Pfad verwendest
-  redirectUri: 'https://yourusername.github.io/callback' # Stelle sicher, dass dies mit deiner OAuth-App übereinstimmt
+  redirectUri: 'https://michael-lehn.github.io/callback' # Stelle sicher, dass dies mit deiner OAuth-App übereinstimmt
 
 
 # Other configurations
