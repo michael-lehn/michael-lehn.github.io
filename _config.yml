@@ -16,8 +16,8 @@ exclude:
   - vendor
 
 # Plugins
-plugins:
-  - jekyll-feed
+#plugins:
+#  - jekyll-feed
 
 # Jekyll Feed settings
 feed:
