@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <a href="/en/{{ page.url | remove_first: '/de/' }}">Read in English</a>
+  </footer>
+</body>
+</html>

@@ -26,3 +26,23 @@ feed:
 # Permalinks settings
 permalink: /:year/:month/:day/:title/
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      lang: "en"
+
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path/
+  de:
+    output: true
+    permalink: /de/:collection/:path/
+  en:
+    output: true
+    permalink: /en/:collection/:path/
+
+
