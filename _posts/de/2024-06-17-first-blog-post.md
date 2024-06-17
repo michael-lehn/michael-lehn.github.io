@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Mein erster Blog-Post"
-date: 2024-06-17
+date: 2023-06-10
+lang: de
 ---
-# NAND-Gatter
+# Mein erster Blog-Post
 
-Etwas Inhalt ;-)
+Das ist der Inhalt meines ersten Blog-Posts. Willkommen zu meinem neuen Blog!
+

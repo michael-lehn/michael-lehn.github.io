@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Mein erster Blog-Post"
+title: "My First Blog Post"
 date: 2023-06-10
-lang: de
+lang: en
 ---
-# Mein erster Blog-Post
+# My First Blog Post
 
-Das ist der Inhalt meines ersten Blog-Posts. Willkommen zu meinem neuen Blog!
+This is the content of my first blog post. Welcome to my new blog!
 

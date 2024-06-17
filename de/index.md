@@ -10,4 +10,3 @@ title: Blog auf Deutsch
     * [{{ post.title }}]({{ post.url }})
   {% endif %}
 {% endfor %}
-

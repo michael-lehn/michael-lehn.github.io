@@ -1,10 +1,12 @@
 ---
-layout: post
-title: "My First Blog Post"
-date: 2023-06-10
-lang: en
+layout: default
+title: Blog in English
 ---
-# My First Blog Post
 
-This is the content of my first blog post. Welcome to my new blog!
+# Blog in English
 
+{% for post in site.posts %}
+  {% if post.lang == "en" %}
+    * [{{ post.title }}]({{ post.url }})
+  {% endif %}
+{% endfor %}
