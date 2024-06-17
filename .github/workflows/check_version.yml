@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y software-properties-common
           sudo apt-add-repository -y ppa:brightbox/ruby-ng
           sudo apt-get update
-          apt-cache madison ruby > available_ruby_versions.txt
+          ruby -v > available_ruby_versions.txt
 
       - name: Save Ruby versions
         uses: actions/upload-artifact@v2
