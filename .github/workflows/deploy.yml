@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        ruby-version: [ '2.6', '2.7', '3.0' ] # Fügen Sie hier weitere Versionen hinzu, falls nötig
 
     steps:
       - name: Checkout repository
@@ -21,9 +17,6 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-
-      - name: Display Ruby version
-        run: ruby -v
 
       - name: Install dependencies
         run: |
