@@ -13,18 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.6.6'  # Setzen Sie eine Standardversion, die wahrscheinlich verfügbar ist
-
-      - name: Display Ruby version
-        run: ruby -v
-
-      - name: Display available Ruby versions
+      - name: List available Ruby versions
         run: |
           sudo apt-get update
           sudo apt-get install -y software-properties-common
           sudo apt-add-repository -y ppa:brightbox/ruby-ng
           sudo apt-get update
           apt-cache madison ruby
+
