@@ -6,32 +6,32 @@ on:
       - main
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: 2.7
 
       - name: Install dependencies
-        run: bundle install
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Build Jekyll site
         env:
-          JEKYLL_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
-          JEKYLL_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
+          JEKYLL_GITALK_CLIENT_ID: ${{ secrets.JEKYLL_GITALK_CLIENT_ID }}
+          JEKYLL_GITALK_CLIENT_SECRET: ${{ secrets.JEKYLL_GITALK_CLIENT_SECRET }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./_site
 
