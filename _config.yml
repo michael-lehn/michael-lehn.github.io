@@ -16,8 +16,8 @@ exclude:
   - vendor
 
 # Plugins
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-feed
 
 # Jekyll Feed settings
 feed:
@@ -45,4 +45,9 @@ collections:
     output: true
     permalink: /en/:collection/:path/
 
-
+gitalk:
+  clientID: 'Ov23liRXSZ9XoC6IoZB1'
+  clientSecret: 'your-client-secret'
+  repo: 'your-repo'
+  owner: 'your-github-username'
+  admin: ['your-github-username']
