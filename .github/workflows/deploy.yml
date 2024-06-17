@@ -8,6 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version: [ '2.6.9', '2.7.2', '3.0.0' ] # Fügen Sie hier weitere Versionen hinzu, falls nötig
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -15,7 +20,10 @@ jobs:
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.6.2'
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Display Ruby version
+        run: ruby -v
 
       - name: Install dependencies
         run: |
@@ -30,8 +38,8 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
+        if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./_site
-
