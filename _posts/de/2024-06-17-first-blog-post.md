@@ -6,5 +6,5 @@ lang: de
 ---
 # Mein erster Blog-Post
 
-Das ist der Inhalt meines ersten Blog-Posts. Willkommen zu meinem neuen Blog!
+Das ist der Inhalt meines ersten Blog-Posts.
 
