@@ -9,7 +9,8 @@ module Jekyll
         'repo' => 'michael-lehn.github.io',
         'owner' => 'michael-lehn',
         'admin' => ['michael-lehn'],
-        'distractionFreeMode' => false
+        'distractionFreeMode' => false,
+        'redirectUri' => 'https://michael-lehn.github.io/callback'
       }
     end
   end

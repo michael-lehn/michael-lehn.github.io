@@ -28,6 +28,18 @@ plugins:
 # Gitalk settings (will be overwritten by the plugin)
 gitalk: {}
 
+gitalk:
+  clientID: ENV['JEKYLL_GITALK_CLIENT_ID']
+  clientSecret: ENV['JEKYLL_GITALK_CLIENT_SECRET']
+  repo: 'michael-lehn.github.io' # Dein Repository-Name
+  owner: 'michael-lehn'
+  admin: ['michael-lehn']
+  distractionFreeMode: false
+  oauthHost: 'https://github.com' # Optional, falls du einen benutzerdefinierten OAuth-Host verwendest
+  oauthPath: '/login/oauth/authorize' # Optional, falls du einen benutzerdefinierten OAuth-Pfad verwendest
+  redirectUri: 'https://yourusername.github.io/callback' # Stelle sicher, dass dies mit deiner OAuth-App übereinstimmt
+
+
 # Other configurations
 kramdown:
   input: GFM
