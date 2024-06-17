@@ -1,5 +1,21 @@
 ---
-layout: home
-title: Michael's Blog
+layout: default
+title: Willkommen
 ---
-What this blog is about ...
+
+# Willkommen zu meinem Blog
+
+## Deutsch
+
+Hier findest du alle Blog-Posts auf Deutsch.
+
+[Blog auf Deutsch](/de/)
+
+---
+
+## English
+
+Here you will find all blog posts in English.
+
+[Blog in English](/en/)
+
